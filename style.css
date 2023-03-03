@@ -14,7 +14,7 @@ body .header {
     justify-content: center;
 }
 body .header img {
-    width: 300px;
+    width: 200px;
 }
 #box {
     margin: 50px;
@@ -26,7 +26,7 @@ body .header img {
     height: 100%;
     position: relative;
     top: -560px;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 0.5);
     background-size: 200px;
     background-repeat: no-repeat;
     display: flex;
@@ -54,7 +54,6 @@ body .header img {
 #score {
     width: 10%;
     height: 20px;
-    /* background-color: #78C197; */
     position: relative;
     top: -520px;
     left: 88%;
@@ -72,6 +71,15 @@ body .header img {
     background-size: 200px;
     background-repeat: no-repeat;
 }
+#ponka2 {
+    height: 400px;
+    position: relative;
+    top: 0px;
+    left: 10px;
+    background-image: url(ponka1_22.png);
+    background-size: 200px;
+    background-repeat: no-repeat;
+}
 .stop1 {
     animation: stop1 0.8s infinite;
 }
@@ -81,25 +89,34 @@ body .header img {
 .jump {
     animation: jump 0.8s infinite;
 }
+.jump2 {
+    animation: jump2 0.8s infinite;
+}
 .run {
     animation: run 0.42s infinite;
 }
+.run2 {
+    animation: run2 0.42s infinite;
+}
 @keyframes jump {
-    0%{
-        top: 0px;
-    }
-    60%{
-        top: -70px;
-        background-image: url(ponka4.png);
-    }
-    100%{
-        top: 0px;
-    }
+    0%{top: 0px;}
+    60%{top: -70px; background-image: url(ponka4.png);}
+    100%{top: 0px;}
+}
+@keyframes jump2 {
+    0%{top: 0px;}
+    60%{top: -70px; background-image: url(ponka4_22.png);}
+    100%{top: 0px;}
 }
 @keyframes run {
     0%{background-image: url(ponka2.png);}
     50%{background-image: url(ponka3.png);}
     100%{background-image: url(ponka1.png);}
+}
+@keyframes run2 {
+    0%{background-image: url(ponka2_22.png);}
+    50%{background-image: url(ponka3_22.png);}
+    100%{background-image: url(ponka1_22.png);}
 }
 @keyframes stop1 {
     0%{left: 0px;}
@@ -137,4 +154,28 @@ body .btn {
     width: 85%;
     display: flex;
     justify-content: center;
+}
+body .btn .btntoo {
+    cursor: pointer;
+    border: none;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    background-color: white;
+    color: #348BB4;
+}
+body .btn .btntoo img {
+    margin-top: 6.5px;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+}
+body .btn .btntoo p {
+    font-size: 15px;
+}
+body .btn .btntoo:hover {
+    color: white;
+    background-color: #ffffff7f;
+    border: 1px solid rgb(255, 255, 255);
 }

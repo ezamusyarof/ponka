@@ -7,17 +7,32 @@ let boleh_loncat = true;
 let boleh_kalah = true;
 let score_run = true;
 
-ponka.classList.add("run");
+let cur_baju = 2021;
+
+if (cur_baju==2021){ponka.classList.add("run");}
+else{ponka.classList.add("run2");}
 
 function jump() {
-    if (ponka.classList != "jump" && boleh_loncat){
-        ponka.classList.remove("run");
-        ponka.classList.add("jump");
-
+    if ((ponka.classList != "jump" || ponka.classList != "jump2") && boleh_loncat){
+        if (cur_baju==2021){
+            ponka.classList.remove("run");
+            ponka.classList.add("jump");
+        }
+        else{
+            ponka.classList.remove("run2");
+            ponka.classList.add("jump2");
+        }
         setTimeout( function (){            
-            ponka.classList.remove("jump");
-            ponka.classList.add("run");
-            document.getElementsByClassName("jump");
+            if (cur_baju==2021){
+                ponka.classList.remove("jump");
+                ponka.classList.add("run");
+                document.getElementsByClassName("jump");
+            }
+            else{
+                ponka.classList.remove("jump2");
+                ponka.classList.add("run2");
+                document.getElementsByClassName("jump2");
+            }            
         }, 800)        
     }
 }
@@ -28,13 +43,14 @@ setInterval(function () {
         
     if ((cur_item<200)&&(cur_ponka==0)&&boleh_kalah) {  
         score_run = false;      
-        ponka.classList.remove("run");
+        if (cur_baju==2021){ponka.classList.remove("run");}
+        else{ponka.classList.remove("run2");}
         ponka.classList.add("stop1");
         item.classList.remove("item");
         item.classList.add("stop2");
         layer_top.style.display = "flex";
         setTimeout( function (){      
-            boleh_loncat = false; 
+            boleh_loncat = false;
         }, 500)
         boleh_kalah = false;
     }
@@ -57,7 +73,8 @@ document.addEventListener("keydown", function (eve) {
         layer_top.style.display = "none";
 
         ponka.classList.remove("stop1");
-        ponka.classList.add("run");
+        if (cur_baju==2021){ponka.classList.add("run");}
+        else{ponka.classList.add("run2");}
         item.classList.remove("stop2");
         item.classList.add("item");  
 
@@ -78,9 +95,10 @@ function jump_click(){
         layer_top.style.display = "none";
 
         ponka.classList.remove("stop1");
-        ponka.classList.add("run");
+        if (cur_baju==2021){ponka.classList.add("run");}
+        else{ponka.classList.add("run2");}
         item.classList.remove("stop2");
-        item.classList.add("item");  
+        item.classList.add("item");
 
         boleh_kalah = true;
         setTimeout( function (){            
@@ -89,5 +107,15 @@ function jump_click(){
     }
 }
 
-
+function gantibaju(){
+    if(cur_baju==2021){
+        cur_baju = 2022;
+        ponka.id = "ponka2";
+        ponka.classList.remove("jump");
+    } else {
+        cur_baju = 2021;
+        ponka.id = "ponka";
+        ponka.classList.remove("jump2");
+    }
+}
 

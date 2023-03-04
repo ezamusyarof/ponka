@@ -49,7 +49,7 @@ setInterval(function () {
         item.classList.remove("item");
         item.classList.add("stop2");
         layer_top.style.display = "flex";
-        setTimeout( function (){      
+        setTimeout( function (){
             boleh_loncat = false;
         }, 500)
         boleh_kalah = false;
@@ -112,10 +112,14 @@ function gantibaju(){
         cur_baju = 2022;
         ponka.id = "ponka2";
         ponka.classList.remove("jump");
+        ponka.classList.remove("run");
+        // ponka.classList.add("run2");
     } else {
         cur_baju = 2021;
         ponka.id = "ponka";
         ponka.classList.remove("jump2");
+        ponka.classList.remove("run2");
+        // ponka.classList.add("run");
     }
 }
 

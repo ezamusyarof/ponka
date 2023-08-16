@@ -7,4 +7,4 @@
 Demonstrasi : https://ezamusyarof.github.io/ponka/
 
 
-Thanks  :feather:
+Thanks 🐣
